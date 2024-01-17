@@ -5,4 +5,16 @@ function comprar(){
     let eletmentoQuantidade = document.getElementById(`qtd-${tipo}`);
     let quantidadeDisponivel = parseInt(eletmentoQuantidade.textContent);
     
+    //aplicando a lógica
+    if(quantidadeDisponivel >= quantidadeInput){
+        eletmentoQuantidade.textContent = quantidadeDisponivel - quantidadeInput;
+        alert('Compra realizada com sucesso')
+    } else {
+        alert('Verifique a quantidade de cadeiras dísponiveis.')
+    }
+
+    //limpando o campo QTD
+    let limparQtd = document.querySelector('input');
+    limparQtd.value = '';
+
 }
